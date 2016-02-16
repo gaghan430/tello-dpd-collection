@@ -2,7 +2,7 @@
  * @Author: Dodik Gaghan
  * @Date:   2016-02-16 11:29:36
  * @Last Modified by:   Dodik Gaghan
- * @Last Modified time: 2016-02-16 13:17:59
+ * @Last Modified time: 2016-02-16 13:48:34
  */
 
 'use strict';
@@ -23,10 +23,8 @@ CollectionResource.label = 'Custom Collection';
 CollectionResource.defaultPath = '/collection';
 
 CollectionResource.prototype.handle = function(ctx) {
-	var cc = this;
-
 	if (ctx.req.method == "GET" && (ctx.url === '/count' || ctx.url.indexOf('/index-of') === 0)) {
-		return Collection.prototype.handle.apply(cc, arguments);
+		return Collection.prototype.handle.apply(this, arguments);
 	}
 
 	// set id if one wasnt provided in the query

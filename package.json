@@ -1,0 +1,25 @@
+{
+  "name": "tello-dpd-collection",
+  "version": "1.0.0",
+  "description": "Deployd Custom Collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaghan430/tello-dpd-collection.git"
+  },
+  "keywords": [
+    "deploy",
+    "collection",
+    "custom",
+    "collection"
+  ],
+  "author": "dodik gaghan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaghan430/tello-dpd-collection/issues"
+  },
+  "homepage": "https://github.com/gaghan430/tello-dpd-collection#readme"
+}

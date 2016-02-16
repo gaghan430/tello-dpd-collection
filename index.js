@@ -2,7 +2,7 @@
  * @Author: Dodik Gaghan
  * @Date:   2016-02-16 11:29:36
  * @Last Modified by:   Dodik Gaghan
- * @Last Modified time: 2016-02-16 11:45:48
+ * @Last Modified time: 2016-02-16 13:17:59
  */
 
 'use strict';
@@ -19,16 +19,18 @@ util.inherits(CollectionResource, Collection);
 CollectionResource.dashboard = Collection.dashboard;
 CollectionResource.events = _.clone(Collection.events);
 Collection.prototype.clientGeneration = true;
-UserCollection.label = 'Custom Collection';
-UserCollection.defaultPath = '/collection';
+CollectionResource.label = 'Custom Collection';
+CollectionResource.defaultPath = '/collection';
 
-UserCollection.prototype.handle = function(ctx) {
+CollectionResource.prototype.handle = function(ctx) {
 	var cc = this;
 
 	if (ctx.req.method == "GET" && (ctx.url === '/count' || ctx.url.indexOf('/index-of') === 0)) {
 		return Collection.prototype.handle.apply(cc, arguments);
 	}
 
+	// set id if one wasnt provided in the query
+	ctx.query.id = ctx.query.id || this.parseId(ctx) || (ctx.body && ctx.body.id);
 	switch (ctx.req.method) {
 		case 'GET':
 			this.find(ctx, ctx.done);
@@ -48,4 +50,4 @@ UserCollection.prototype.handle = function(ctx) {
 	}
 }
 
-module.exports = UserCollection;
+module.exports = CollectionResource;

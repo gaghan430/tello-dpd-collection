@@ -1,8 +1,8 @@
 /* 
  * @Author: Dodik Gaghan
  * @Date:   2016-02-16 11:29:36
- * @Last Modified by:   Dodik Gaghan
- * @Last Modified time: 2016-02-16 15:33:05
+ * @Last Modified by:   gaghan
+ * @Last Modified time: 2016-02-24 10:31:43
  */
 
 'use strict';
@@ -18,7 +18,7 @@ util.inherits(CollectionResource, Collection);
 
 CollectionResource.dashboard = Collection.dashboard;
 CollectionResource.events = _.clone(Collection.events);
-Collection.prototype.clientGeneration = true;
+CollectionResource.prototype.clientGeneration = true;
 CollectionResource.label = 'Custom Collection';
 CollectionResource.defaultPath = '/collection';
 
